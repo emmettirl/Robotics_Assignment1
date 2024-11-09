@@ -8,6 +8,7 @@ setup.py
 ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/requires.txt
 ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/top_level.txt
 ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/zip-safe
+Robotics_Assignment1/SpawnClient.py
 Robotics_Assignment1/__init__.py
 Robotics_Assignment1/client_member_function.py
 Robotics_Assignment1/service_member_function.py

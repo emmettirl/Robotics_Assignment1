@@ -22,6 +22,7 @@ setup(
         'console_scripts': [
 		'service = Robotics_Assignment1.service_member_function:main',
 		'client = Robotics_Assignment1.client_member_function:main',
+		'spawnClient = Robotics_Assignment1.SpawnClient:main',
         ],
     },
 )
