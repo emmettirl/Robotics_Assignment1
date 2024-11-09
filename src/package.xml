@@ -3,9 +3,9 @@
 <package format="3">
   <name>Robotics_Assignment1</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="emmett.fitzharris@mycit.ie">root</maintainer>
-  <license>TODO: License declaration</license>
+  <description>The repository for Assignment 1 of Robotics and Autonomous Systems</description>
+  <maintainer email="emmett.fitzharris@mycit.ie">Emmett Fitzharris</maintainer>
+  <license>GPL</license>
 
   <depend>rclpy</depend>
   <depend>example_interfaces</depend>

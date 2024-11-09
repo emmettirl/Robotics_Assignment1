@@ -1,0 +1,41 @@
+[1.344s] Invoking command in '/root/ros2_ws/src': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/root/ros2_ws/build/Robotics_Assignment1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/Robotics_Assignment1 build --build-base /root/ros2_ws/build/Robotics_Assignment1/build install --record /root/ros2_ws/build/Robotics_Assignment1/install.log --single-version-externally-managed install_data
+[1.607s] running egg_info
+[1.607s] creating ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info
+[1.628s] writing ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/PKG-INFO
+[1.628s] writing dependency_links to ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/dependency_links.txt
+[1.629s] writing entry points to ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/entry_points.txt
+[1.629s] writing requirements to ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/requires.txt
+[1.629s] writing top-level names to ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/top_level.txt
+[1.629s] writing manifest file '../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/SOURCES.txt'
+[1.668s] reading manifest file '../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/SOURCES.txt'
+[1.669s] writing manifest file '../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/SOURCES.txt'
+[1.669s] running build
+[1.670s] running build_py
+[1.671s] creating /root/ros2_ws/build/Robotics_Assignment1/build
+[1.671s] creating /root/ros2_ws/build/Robotics_Assignment1/build/lib
+[1.671s] creating /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1
+[1.671s] copying Robotics_Assignment1/__init__.py -> /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1
+[1.671s] copying Robotics_Assignment1/client_member_function.py -> /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1
+[1.672s] copying Robotics_Assignment1/service_member_function.py -> /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1
+[1.673s] running install
+[1.679s] running install_lib
+[1.699s] creating /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1
+[1.699s] copying /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1/__init__.py -> /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1
+[1.699s] copying /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1/client_member_function.py -> /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1
+[1.699s] copying /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1/service_member_function.py -> /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1
+[1.700s] byte-compiling /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1/__init__.py to __init__.cpython-312.pyc
+[1.700s] byte-compiling /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1/client_member_function.py to client_member_function.cpython-312.pyc
+[1.701s] byte-compiling /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1/service_member_function.py to service_member_function.cpython-312.pyc
+[1.701s] running install_data
+[1.701s] creating /root/ros2_ws/install/Robotics_Assignment1/share/ament_index
+[1.702s] creating /root/ros2_ws/install/Robotics_Assignment1/share/ament_index/resource_index
+[1.702s] creating /root/ros2_ws/install/Robotics_Assignment1/share/ament_index/resource_index/packages
+[1.703s] copying resource/Robotics_Assignment1 -> /root/ros2_ws/install/Robotics_Assignment1/share/ament_index/resource_index/packages
+[1.703s] copying package.xml -> /root/ros2_ws/install/Robotics_Assignment1/share/Robotics_Assignment1
+[1.703s] running install_egg_info
+[1.725s] Copying ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info to /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1-0.0.0-py3.12.egg-info
+[1.726s] running install_scripts
+[1.855s] Installing client script to /root/ros2_ws/install/Robotics_Assignment1/lib/Robotics_Assignment1
+[1.855s] Installing service script to /root/ros2_ws/install/Robotics_Assignment1/lib/Robotics_Assignment1
+[1.855s] writing list of installed files to '/root/ros2_ws/build/Robotics_Assignment1/install.log'
+[1.900s] Invoked command in '/root/ros2_ws/src' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/root/ros2_ws/build/Robotics_Assignment1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/Robotics_Assignment1 build --build-base /root/ros2_ws/build/Robotics_Assignment1/build install --record /root/ros2_ws/build/Robotics_Assignment1/install.log --single-version-externally-managed install_data

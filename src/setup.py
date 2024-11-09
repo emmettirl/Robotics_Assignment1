@@ -13,13 +13,15 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='root',
+    maintainer='Emmett Fitzharris',
     maintainer_email='emmett.fitzharris@mycit.ie',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='Robotics and Autonomous Systems Assignment 1',
+    license='GPL',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+		'service = Robotics_Assignment1.service_member_function:main',
+		'client = Robotics_Assignment1.client_member_function:main',
         ],
     },
 )

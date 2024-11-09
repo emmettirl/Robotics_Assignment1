@@ -1,0 +1,3 @@
+[console_scripts]
+client = Robotics_Assignment1.client_member_function:main
+service = Robotics_Assignment1.service_member_function:main

@@ -1,0 +1,39 @@
+running egg_info
+creating ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info
+writing ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/PKG-INFO
+writing dependency_links to ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/dependency_links.txt
+writing entry points to ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/entry_points.txt
+writing requirements to ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/requires.txt
+writing top-level names to ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/top_level.txt
+writing manifest file '../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/SOURCES.txt'
+reading manifest file '../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/SOURCES.txt'
+writing manifest file '../build/Robotics_Assignment1/Robotics_Assignment1.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /root/ros2_ws/build/Robotics_Assignment1/build
+creating /root/ros2_ws/build/Robotics_Assignment1/build/lib
+creating /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1
+copying Robotics_Assignment1/__init__.py -> /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1
+copying Robotics_Assignment1/client_member_function.py -> /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1
+copying Robotics_Assignment1/service_member_function.py -> /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1
+running install
+running install_lib
+creating /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1
+copying /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1/__init__.py -> /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1
+copying /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1/client_member_function.py -> /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1
+copying /root/ros2_ws/build/Robotics_Assignment1/build/lib/Robotics_Assignment1/service_member_function.py -> /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1
+byte-compiling /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1/__init__.py to __init__.cpython-312.pyc
+byte-compiling /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1/client_member_function.py to client_member_function.cpython-312.pyc
+byte-compiling /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1/service_member_function.py to service_member_function.cpython-312.pyc
+running install_data
+creating /root/ros2_ws/install/Robotics_Assignment1/share/ament_index
+creating /root/ros2_ws/install/Robotics_Assignment1/share/ament_index/resource_index
+creating /root/ros2_ws/install/Robotics_Assignment1/share/ament_index/resource_index/packages
+copying resource/Robotics_Assignment1 -> /root/ros2_ws/install/Robotics_Assignment1/share/ament_index/resource_index/packages
+copying package.xml -> /root/ros2_ws/install/Robotics_Assignment1/share/Robotics_Assignment1
+running install_egg_info
+Copying ../build/Robotics_Assignment1/Robotics_Assignment1.egg-info to /root/ros2_ws/install/Robotics_Assignment1/lib/python3.12/site-packages/Robotics_Assignment1-0.0.0-py3.12.egg-info
+running install_scripts
+Installing client script to /root/ros2_ws/install/Robotics_Assignment1/lib/Robotics_Assignment1
+Installing service script to /root/ros2_ws/install/Robotics_Assignment1/lib/Robotics_Assignment1
+writing list of installed files to '/root/ros2_ws/build/Robotics_Assignment1/install.log'
