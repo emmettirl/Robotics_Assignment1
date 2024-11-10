@@ -17,6 +17,6 @@ ros2 run robotics_assignment1 SpawnTurtlesServerClient.py 5
 ### Test Turtle Following Action Goal
 ```
 source install/setup.bash
-ros2 action send_goal t1Follow robotics_assignment1/action/Turtle1Follow "{order_x: 5, order_y: 5, order_theta: 0, order_linear_velocity: 1, order_angular_velocity: 0}"
+ros2 action send_goal t1Follow robotics_assignment1/action/Turtle1Follow "{goal_turtle_name: 'turtle_1'}"
 ```
 

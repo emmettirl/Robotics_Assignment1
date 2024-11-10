@@ -19,14 +19,13 @@ class MoveTurtle1ActionServer(Node):
     def execute_callback(self, goal_handle):
         self.get_logger().info('Executing goal...')
 
-        sequence = [0, 1]
-
-        for i in range(1, 5):
-            sequence.append(sequence[i] + sequence[i - 1])
+        goal_turtle = goal_handle.request.goal_turtle_name
 
         goal_handle.succeed()
         result = Turtle1Follow.Result()
-        result.sequence = sequence
+
+        self.get_logger().info('Goal: %s' % goal_turtle)
+        result.distance = [100]
         return result
 
 
