@@ -20,8 +20,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+        'spawnClient = robotics_assignment1.SpawnClient:main',
         'spawnTurtlesServer = robotics_assignment1.SpawnTurtlesServer:main',
-        'SpawnTurtlesServerClient = robotics_assignment1.SpawnTurtlesServerClient:main',
+        'spawnTurtlesServerClient = robotics_assignment1.SpawnTurtlesServerClient:main',
         ],
     },
 )

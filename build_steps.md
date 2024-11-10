@@ -14,8 +14,10 @@ ros2 run turtlesim turtlesim_node
 
 ### Terminal 1
 ```
+rosdep install -i --from-path src --rosdistro jazzy -y
 source install/setup.bash
 colcon build --packages-select robotics_assignment1
+dos2unix /root/ros2_ws/install/robotics_assignment1/lib/robotics_assignment1/SpawnClient.py
 dos2unix /root/ros2_ws/install/robotics_assignment1/lib/robotics_assignment1/SpawnTurtlesServer.py
 ros2 run robotics_assignment1 SpawnTurtlesServer.py
 ```

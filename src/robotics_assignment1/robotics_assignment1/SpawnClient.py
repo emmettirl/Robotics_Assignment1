@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 
-import sys
-from turtlesim.srv import Spawn
 import rclpy
 from rclpy.node import Node
-class SpawnClient(Node):
+from turtlesim.srv import Spawn
 
+class SpawnClient(Node):
     def __init__(self):
         super().__init__('spawn_client')
-        self.cli = self.create_client(Spawn, 'spawn')
-        while not self.cli.wait_for_service(timeout_sec=1.0):
+        self.client = self.create_client(Spawn, 'spawn')
+        while not self.client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('service not available, waiting again...')
         self.req = Spawn.Request()
 
@@ -18,7 +17,7 @@ class SpawnClient(Node):
         self.req.y = y
         self.req.theta = theta
         self.req.name = name
-        self.future = self.cli.call_async(self.req)
+        self.future = self.client.call_async(self.req)
         rclpy.spin_until_future_complete(self, self.future)
         return self.future.result()
 

@@ -14,6 +14,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 # Install entry points
 install(PROGRAMS
+  robotics_assignment1/SpawnClient.py
   robotics_assignment1/SpawnTurtlesServer.py
   robotics_assignment1/SpawnTurtlesServerClient.py
   DESTINATION lib/${PROJECT_NAME}
