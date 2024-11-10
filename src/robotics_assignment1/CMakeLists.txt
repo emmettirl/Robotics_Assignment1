@@ -22,6 +22,11 @@ install(PROGRAMS
   DESTINATION lib/${PROJECT_NAME}
 )
 
+# Install launch directory
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}
+)
+
 # Install package.xml
 install(FILES package.xml
   DESTINATION share/${PROJECT_NAME}
