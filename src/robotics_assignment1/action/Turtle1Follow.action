@@ -1,0 +1,13 @@
+float32 order_x
+float32 order_y
+float32 order_theta
+
+float32 order_linear_velocity
+float32 order_angular_velocity
+---
+int32[] sequence
+---
+int32[] partial_sequence
+
+
+
