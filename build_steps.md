@@ -1,9 +1,5 @@
-## Open TurtleSim
-- ```ros2 run turtlesim turtlesim_node```
-
 ## Build project
 - ```rosdep install -i --from-path src --rosdistro jazzy -y```
-
 - ```colcon build --packages-select Robotics_Assignment1```
 
 
@@ -11,13 +7,23 @@
 - ```source install/setup.bash```
 
 
-## Run project
+### Terminal 0
+```
+ros2 run turtlesim turtlesim_node
+```
 
-[//]: # (- ```ros2 run Robotics_Assignment1 service```)
+### Terminal 1
+```
+source install/setup.bash
+colcon build --packages-select robotics_assignment1
+dos2unix /root/ros2_ws/install/robotics_assignment1/lib/robotics_assignment1/SpawnTurtlesServer.py
+ros2 run robotics_assignment1 SpawnTurtlesServer.py
+```
+### Terminal 2
 
-[//]: # (- ```ros2 run Robotics_Assignment1 client 2 3```)
+```
+source install/setup.bash
+dos2unix /root/ros2_ws/install/robotics_assignment1/lib/robotics_assignment1/SpawnTurtlesServerClient.py
+ros2 run robotics_assignment1 SpawnTurtlesServerClient.py 5
+```
 
-[//]: # (- ```ros2 run Robotics_Assignment1 spawnClient 5.0 5.0 0.0 turtle1```)
-
-- ```ros2 run Robotics_Assignment1 spawnService```
-- ```ros2 run Robotics_Assignment1 spawnClient 5```
