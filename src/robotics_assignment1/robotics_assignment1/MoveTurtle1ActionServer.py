@@ -8,6 +8,7 @@ from turtlesim.msg import Pose
 from robotics_assignment1.action import Turtle1Follow
 from rclpy.task import Future
 import math
+import subprocess
 
 
 class MoveTurtle1ActionServer(Node):
@@ -75,6 +76,11 @@ class MoveTurtle1ActionServer(Node):
 
         delta_x = goal_pose.x - controlled_pose.x
         delta_y = goal_pose.y - controlled_pose.y
+
+        # put goal in front of the turtle
+        delta_x -= 0.5 * math.cos(goal_pose.theta)
+        delta_y -= 0.5 * math.sin(goal_pose.theta)
+
         distance = math.sqrt(delta_x ** 2 + delta_y ** 2)
 
         angle_to_goal = math.atan2(delta_y, delta_x)
@@ -82,8 +88,7 @@ class MoveTurtle1ActionServer(Node):
         # Calculate the difference in angle
         angle_diff = self.normalize_angle(angle_to_goal - controlled_pose.theta)
 
-        # Set linear and angular speeds
-        linear_speed = linear_gain* distance
+        linear_speed = linear_gain* distance +1
         angular_speed = angular_gain * angle_diff
 
         self.publish_twist(linear_speed, angular_speed)
@@ -110,9 +115,13 @@ class MoveTurtle1ActionServer(Node):
 
                 self.publish_twist(0.0, 0.0)
 
+                # remove the goal turtle from the ros2 simulation
+                subprocess.run(
+                    ['ros2', 'service', 'call', '/kill', 'turtlesim/srv/Kill', f'{{"name": "{self.goal_turtle}"}}'])
                 self.timer.cancel()
                 self.result_future.set_result(result)
                 self.reset_state()
+
 
             else:
                 self.get_logger().info(f'Distance: {self.distance}')

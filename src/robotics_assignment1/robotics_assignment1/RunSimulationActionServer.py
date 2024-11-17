@@ -44,23 +44,27 @@ class RunSimulationActionServer(Node):
 
 
     def pose_callback(self, msg, turtle_name):
-        self.get_logger().info(f'pose received for {turtle_name}')
         self.turtles_poses[turtle_name] = msg
 
-    def spin_turtles(self, angular_speed=1.0):
+
+    def spin_turtles(self, angular_speed=0.5):
+        radius = 4.0
+        center_x = 5.5
+        center_y = 5.5
+        linear_speed = angular_speed * radius
+
         twist = Twist()
-        twist.linear.x = 0.0
+        twist.linear.x = linear_speed
         twist.angular.z = angular_speed
 
         for turtle in self.turtle_list:
             if turtle in self.velocity_publishers:
                 self.velocity_publishers[turtle].publish(twist)
-                self.get_logger().info(f'{turtle} is spinning with angular speed {angular_speed}')
 
     def execute_callback(self, goal_handle):
         self.get_logger().info('Executing goal...')
 
-        random_number = random.randint(1, 10)
+        random_number = random.randint(3, 9)
 
         # Run the first command
         self.get_logger().info(f'Running: ros2 run robotics_assignment1 SpawnTurtlesServerClient.py {random_number}')
