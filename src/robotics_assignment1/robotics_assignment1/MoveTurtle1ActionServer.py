@@ -14,11 +14,12 @@ class MoveTurtle1ActionServer(Node):
     turtles = {}
     controlled_turtle = 'turtle1'
     goal_turtle = None
+    pose_subscribers = []
 
     def __init__(self):
         super().__init__(f'move_{self.controlled_turtle}_action_server')
 
-        self.pose_subscribers = []
+        self.pose_subscribers
         for i in range(1, 10):
             turtle_name = f'turtle_{i}'
             subscriber = self.create_subscription(
@@ -49,9 +50,7 @@ class MoveTurtle1ActionServer(Node):
 
 
     def pose_callback(self, msg, turtle_name):
-        # self.get_logger().info(f'Received pose from {turtle_name}: {msg}')
         self.turtles[turtle_name] = msg
-
 
     def publish_twist(self, linear_speed, angular_speed):
         twist = Twist()
@@ -84,14 +83,13 @@ class MoveTurtle1ActionServer(Node):
         angle_diff = self.normalize_angle(angle_to_goal - controlled_pose.theta)
 
         # Set linear and angular speeds
-        linear_speed = linear_gain* distance  # Cap the speed to a maximum value
-        angular_speed = angular_gain * angle_diff  # Proportional control for angular speed
+        linear_speed = linear_gain* distance
+        angular_speed = angular_gain * angle_diff
 
         self.publish_twist(linear_speed, angular_speed)
 
 
     def update_velocity(self):
-        self.get_logger().info('########  Updating velocity... #############')
         if self.controlled_turtle in self.turtles and self.goal_turtle in self.turtles:
             controlled_pose = self.turtles[self.controlled_turtle]
             goal_pose = self.turtles[self.goal_turtle]

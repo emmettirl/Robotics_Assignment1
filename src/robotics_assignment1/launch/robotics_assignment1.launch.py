@@ -22,5 +22,11 @@ def generate_launch_description():
             executable='MoveTurtle1ActionServer.py',
             name='move_turtle1_action_server',
             output='screen'
+        ),
+        Node(
+            package='robotics_assignment1',
+            executable='RunSimulationActionServer.py',
+            name='run_simulation_action_server',
+            output='screen'
         )
     ])

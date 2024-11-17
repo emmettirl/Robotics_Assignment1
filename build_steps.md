@@ -8,15 +8,30 @@ find /root/ros2_ws/install -type f -exec dos2unix {} \;
 ros2 launch robotics_assignment1 robotics_assignment1.launch.py
 ```
 
-### Test Turtle Spawning
+### Test Turtle Simulation
 ```
 source install/setup.bash
-ros2 run robotics_assignment1 SpawnTurtlesServerClient.py 5
+ros2 action send_goal run_simulation robotics_assignment1/action/RunSimulation
 ```
 
-### Test Turtle Following Action Goal
-```
-source install/setup.bash
-ros2 action send_goal t1Follow robotics_assignment1/action/Turtle1Follow "{goal_turtle_name: 'turtle_1'}"
-```
+[//]: # (### Test Turtle Spawning)
+
+[//]: # (```)
+
+[//]: # (source install/setup.bash)
+
+[//]: # (ros2 run robotics_assignment1 SpawnTurtlesServerClient.py 5)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### Test Turtle Following Action Goal)
+
+[//]: # (```)
+
+[//]: # (source install/setup.bash)
+
+[//]: # (ros2 action send_goal t1Follow robotics_assignment1/action/Turtle1Follow "{goal_turtle_name: 'turtle_1'}")
+
+[//]: # (```)
 
