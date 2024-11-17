@@ -1,8 +1,10 @@
+# Goal definition
 string goal_turtle_name
+
 ---
-int32[] distance
+# Result definition
+float32[] distance
+
 ---
-int32[] partial_distance
-
-
-
+# Feedback definition
+float32[] partial_distance
