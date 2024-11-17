@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import math
 
 import rclpy
 from rclpy.action import ActionServer
@@ -8,16 +7,13 @@ from geometry_msgs.msg import Twist
 from turtlesim.msg import Pose
 from robotics_assignment1.action import Turtle1Follow
 from rclpy.task import Future
-
+import math
 
 
 class MoveTurtle1ActionServer(Node):
-
     turtles = {}
     controlled_turtle = 'turtle1'
-
     goal_turtle = None
-    distance = 0
 
     def __init__(self):
         super().__init__(f'move_{self.controlled_turtle}_action_server')
@@ -49,9 +45,7 @@ class MoveTurtle1ActionServer(Node):
         # create a publisher for controlled turtle
         self.velocity_publisher = self.create_publisher(Twist, f'/{self.controlled_turtle}/cmd_vel', 10)
 
-        self.timer = None
-        self.goal_handle = None
-
+        self.reset_state()
 
 
     def pose_callback(self, msg, turtle_name):
@@ -68,7 +62,17 @@ class MoveTurtle1ActionServer(Node):
     def calculate_distance(self, pose1, pose2):
         return ((pose1.x - pose2.x)**2 + (pose1.y - pose2.y)**2)**0.5
 
+    def normalize_angle(self, angle):
+        while angle > math.pi:
+            angle -= 2 * math.pi
+        while angle < -math.pi:
+            angle += 2 * math.pi
+        return angle
+
     def set_linear_and_angular_speed(self, controlled_pose, goal_pose):
+
+        linear_gain = 2
+        angular_gain = 4
 
         delta_x = goal_pose.x - controlled_pose.x
         delta_y = goal_pose.y - controlled_pose.y
@@ -77,21 +81,14 @@ class MoveTurtle1ActionServer(Node):
         angle_to_goal = math.atan2(delta_y, delta_x)
 
         # Calculate the difference in angle
-        angle_diff = angle_to_goal - controlled_pose.theta
+        angle_diff = self.normalize_angle(angle_to_goal - controlled_pose.theta)
 
         # Set linear and angular speeds
-        linear_speed = min(1.0, distance)  # Cap the speed to a maximum value
-        angular_speed = 4.0 * angle_diff  # Proportional control for angular speed
+        linear_speed = linear_gain* distance  # Cap the speed to a maximum value
+        angular_speed = angular_gain * angle_diff  # Proportional control for angular speed
 
         self.publish_twist(linear_speed, angular_speed)
 
-        # linear_gain = 2
-        # angular_gain = 4
-        # distance = self.calculate_distance(pose1, pose2)
-        # linear_speed = linear_gain * distance
-        # angular_speed = angular_gain * (pose2.theta - pose1.theta)
-        #
-        # self.publish_twist(linear_speed, angular_speed)
 
     def update_velocity(self):
         self.get_logger().info('########  Updating velocity... #############')
@@ -117,6 +114,7 @@ class MoveTurtle1ActionServer(Node):
 
                 self.timer.cancel()
                 self.result_future.set_result(result)
+                self.reset_state()
 
             else:
                 self.get_logger().info(f'Distance: {self.distance}')
@@ -126,6 +124,7 @@ class MoveTurtle1ActionServer(Node):
             result = Turtle1Follow.Result()
             result.distance = [self.distance]
             self.result_future.set_result(result)
+            self.reset_state()
 
     def execute_callback(self, goal_handle):
         self.get_logger().info('\n\nExecuting goal...')
@@ -151,12 +150,17 @@ class MoveTurtle1ActionServer(Node):
         self.distance = self.calculate_distance(self.turtles[self.goal_turtle], self.turtles[self.controlled_turtle])
 
         # create a timer to periodically update the turtle's velocity
-        self.timer = self.create_timer(0.01, self.update_velocity)
+        self.timer = self.create_timer(0.1, self.update_velocity)
 
         #wait for the goal to be completed
         rclpy.spin_until_future_complete(self, self.result_future)
         return self.result_future.result()
 
+    def reset_state(self):
+        self.goal_turtle = None
+        self.distance = 0
+        self.goal_handle = None
+        self.result_future = None
 
 def main(args=None):
     rclpy.init(args=args)
