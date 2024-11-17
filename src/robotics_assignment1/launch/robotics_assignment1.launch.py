@@ -28,5 +28,11 @@ def generate_launch_description():
             executable='RunSimulationActionServer.py',
             name='run_simulation_action_server',
             output='screen'
+        ),
+        Node(
+            package='robotics_assignment1',
+            executable='RunSimulationActionClient.py',
+            name='run_simulation_action_client',
+            output='screen'
         )
     ])

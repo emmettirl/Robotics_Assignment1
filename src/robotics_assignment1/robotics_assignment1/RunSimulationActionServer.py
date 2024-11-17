@@ -10,8 +10,6 @@ from geometry_msgs.msg import Twist
 from turtlesim.msg import Pose
 import threading
 
-
-
 class RunSimulationActionServer(Node):
 
     def __init__(self):
@@ -74,7 +72,7 @@ class RunSimulationActionServer(Node):
             self.turtle_list.append(f'turtle_{i+1}')
         random.shuffle(self.turtle_list)
 
-        # Create a new thread for running the action goals
+        # Create a new thread for running the action goals to allow synchronous movement of turtles
         thread = threading.Thread(target=self.run_action_goals)
         thread.start()
 

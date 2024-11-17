@@ -21,6 +21,7 @@ install(PROGRAMS
   robotics_assignment1/SpawnTurtlesServerClient.py
   robotics_assignment1/MoveTurtle1ActionServer.py
   robotics_assignment1/RunSimulationActionServer.py
+  robotics_assignment1/RunSimulationActionClient.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

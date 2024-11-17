@@ -26,6 +26,7 @@ setup(
         'spawnTurtlesServerClient = robotics_assignment1.SpawnTurtlesServerClient:main',
         'moveTurtle1ActionServer = robotics_assignment1.MoveTurtle1ActionServer:main',
         'runSimulationActionServer = robotics_assignment1.RunSimulationActionServer:main',
+        'runSimulationActionClient = robotics_assignment1.RunSimulationActionClient:main',
         ],
     },
 )
